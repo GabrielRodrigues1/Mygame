@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyGameShow</title>
+</head>
+<body>
+<style>
+#boneco{
+	width: 400px;
+	height: 490px;
+	background-image: url(personagem.png);
+	background-position: -740px -40px;
+}
+#boneco.frente{
+	background-position: -740px -40px ;
+}
+#boneco.direita{
+	background-position: -1250px -33px ;
+}
+#boneco.inicorrendo{
+	background-position: 460px 550px ;
+}
+#boneco.correndo{
+	background-position: -1800px -25px ;
+}
+</style>
+<div id="boneco" class=""></div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+ $(document).on('keypress',function(evento) {
+ 		var tecla = evento.keyCode;
+	// alert(tecla); // saber qual foi pressionado
+		if(tecla == 100){
+			limpar();
+			$('#boneco').addClass('direita');
+		}else if(tecla == 97){
+			limpar();
+			$('#boneco').addClass('frente');
+		}else if(tecla == 119){
+			limpar();
+
+			$('#boneco').addClass('inicorrendo');
+		}else if(tecla == 115){
+			limpar();
+			$('#boneco').addClass('correndo');
+		}
+ });
+		function limpar(){
+			$('#boneco').removeClass('frente');
+			$('#boneco').removeClass('direita');
+			$('#boneco').removeClass('inicorrendo');
+			$('#boneco').removeClass('correndo');
+		}
+
+</script>
+</body>
+</html>
